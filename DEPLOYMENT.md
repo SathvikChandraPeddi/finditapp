@@ -70,7 +70,7 @@ git commit -m "Initial commit - FindIt AI ready for deployment"
 ### 2.3 Push Code
 
 ```bash
-git remote add origin https://github.com/yourusername/findit-ai.git
+git remote add origin https://github.com/SathvikChandraPeddi/finditapp.git
 git branch -M main
 git push -u origin main
 ```

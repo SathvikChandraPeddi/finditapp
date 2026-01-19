@@ -400,7 +400,7 @@ MIT License - feel free to use this project for personal or commercial purposes.
 ## 📧 Support
 
 - 📖 Check the [documentation](#-documentation)
-- 🐛 [Open an issue](https://github.com/yourusername/finditapp/issues)
+- 🐛 [Open an issue](https://github.com/SathvikChandraPeddi/finditapp/issues)
 - 💬 Review existing issues for solutions
 
 ---
