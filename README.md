@@ -28,6 +28,7 @@ FindIt AI is a modern web application that helps you remember where you stored y
 - 📸 **Capture** - Take a photo of your item (optional)
 - 📍 **Store** - Describe where you put it
 - 🔍 **Recall** - Ask naturally and find it instantly
+- 📄 **Documents** - Store important documents securely
 
 ---
 
@@ -132,13 +133,20 @@ CREATE INDEX items_user_id_idx ON items(user_id);
 CREATE INDEX items_created_at_idx ON items(created_at DESC);
 ```
 
-#### Setup Storage Bucket
+#### Setup Storage Buckets
 
+**Bucket 1: item-images**
 1. Go to **Storage** in Supabase dashboard
 2. Click **New Bucket**
 3. Name it: `item-images`
 4. Make it **Public**
 5. Click **Create**
+
+**Bucket 2: document-images**
+1. Click **New Bucket** again
+2. Name it: `document-images`
+3. Make it **Public**
+4. Click **Create**
 
 #### Add Storage Policies
 
@@ -187,7 +195,7 @@ VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
@@ -234,19 +242,22 @@ finditapp/
 ├── src/
 │   ├── components/
 │   │   ├── Navbar.jsx              # Navigation bar
-│   │   └── home/                   # Homepage sections
-│   │       ├── CinematicHero.jsx
-│   │       ├── CinematicProblem.jsx
-│   │       ├── CinematicSolution.jsx
-│   │       ├── CinematicHowItWorks.jsx
-│   │       ├── CinematicFeatures.jsx
-│   │       └── CinematicClosing.jsx
 │   ├── pages/
 │   │   ├── HomePage.jsx            # Landing page
 │   │   ├── SignUpPage.jsx          # Registration
 │   │   ├── SignInPage.jsx          # Login
 │   │   ├── AddItemPage.jsx         # Add new items
 │   │   ├── FindItemPage.jsx        # Search interface
+│   │   ├── StoredItemsPage.jsx     # View all items
+│   │   ├── ImportantDocumentsPage.jsx  # Store documents
+│   │   └── AboutPage.jsx           # About page
+│   ├── context/
+│   │   └── AuthContext.jsx         # Authentication state
+│   ├── lib/
+│   │   ├── supabase.js            # Supabase client
+│   │   ├── items.js               # Item CRUD operations
+│   │   ├── documents.js           # Document CRUD operations
+│   │   └── storage.js             # Image upload/delete
 │   │   └── StoredItemsPage.jsx     # View all items
 │   ├── context/
 │   │   └── AuthContext.jsx         # Authentication state
